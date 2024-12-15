@@ -36,7 +36,7 @@ const faqs = [
         </a>{" "}
         or{" "}
         <a
-          href="mailto:elie@mailto.live"
+          href="mailto:info@mailto.live"
           target="_blank"
           className="font-semibold hover:underline"
           rel="noreferrer"
@@ -58,7 +58,7 @@ const faqs = [
       <>
         If you don{"'"}t think we provided you with value send us an{" "}
         <a
-          href="mailto:elie@mailto.live"
+          href="mailto:info@mailto.live"
           target="_blank"
           className="font-semibold hover:underline"
           rel="noreferrer"

@@ -28,7 +28,7 @@ const sendEmail = async ({
   }
 
   const result = await resend.emails.send({
-    from: "Inbox Zero <elie@mailto.live>",
+    from: "Inbox Zero <info@mailto.live>",
     to: test ? "delivered@resend.dev" : to,
     subject,
     react,

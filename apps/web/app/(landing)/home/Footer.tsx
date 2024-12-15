@@ -12,7 +12,7 @@ const navigation = {
   ],
   support: [
     { name: "Pricing", href: "/#pricing" },
-    { name: "Contact", href: "mailto:elie@mailto.live", target: "_blank" },
+    { name: "Contact", href: "mailto:info@mailto.live", target: "_blank" },
     {
       name: "Documentation",
       href: "https://docs.mailto.live",

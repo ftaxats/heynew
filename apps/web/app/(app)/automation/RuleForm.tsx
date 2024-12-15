@@ -265,7 +265,7 @@ export function RuleForm({ rule }: { rule: CreateRuleBody & { id?: string } }) {
             label="From"
             registerProps={register("from")}
             error={errors.from}
-            placeholder="e.g. elie@mailto.live"
+            placeholder="e.g. info@mailto.live"
             tooltipText="Only apply this rule to emails from this address."
           />
           <Input
@@ -274,7 +274,7 @@ export function RuleForm({ rule }: { rule: CreateRuleBody & { id?: string } }) {
             label="To"
             registerProps={register("to")}
             error={errors.to}
-            placeholder="e.g. elie@mailto.live"
+            placeholder="e.g. info@mailto.live"
             tooltipText="Only apply this rule to emails sent to this address."
           />
           <Input
