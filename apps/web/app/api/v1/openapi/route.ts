@@ -55,7 +55,7 @@ export async function GET(request: NextRequest) {
   const docs = generator.generateDocument({
     openapi: "3.1.0",
     info: {
-      title: "Inbox Zero API",
+      title: "Mailto Live API",
       version: "1.0.0",
     },
     servers: [

@@ -15,7 +15,7 @@ export function ShareOnTwitterButton() {
   return (
     <Button asChild variant="outline">
       <Link
-        href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`I just completed the daily inbox zero challenge!
+        href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`I just completed the daily Mailto Live challenge!
 
 I cleaned up ${Object.keys(handled).length} emails in ${formatTime(
           calculateTimePassed(endTime || new Date(), startTime),

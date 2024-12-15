@@ -91,7 +91,7 @@ export function Pricing(props: { header?: React.ReactNode }) {
 
             <Button link={{ href: "/automation" }} color="blue">
               <SparklesIcon className="mr-2 h-4 w-4" />
-              Use Inbox Zero
+              Use Mailto Live
             </Button>
 
             {premiumTier && (
@@ -288,7 +288,7 @@ function LifetimePricing(props: {
             </div>
           </h3>
           <p className="mt-6 text-base leading-7 text-gray-600">
-            Get lifetime access to Inbox Zero Pro for a one-time payment.
+            Get lifetime access to Mailto Live Pro for a one-time payment.
             <br />
             Includes $100 in AI credits.
           </p>
@@ -314,7 +314,7 @@ function LifetimePricing(props: {
           <div className="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16">
             <div className="mx-auto max-w-xs px-8">
               <p className="text-base font-semibold text-gray-600">
-                Lifetime access to Inbox Zero
+                Lifetime access to Mailto Live
               </p>
               <p className="mt-6 flex items-baseline justify-center gap-x-2">
                 <span className="text-5xl font-bold tracking-tight text-gray-900">

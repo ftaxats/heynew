@@ -1,8 +1,8 @@
 const faqs = [
   {
-    question: "Can I still use Inbox Zero alongside my current email client?",
+    question: "Can I still use Mailto Live alongside my current email client?",
     answer:
-      "Yes! Inbox Zero is intended to be used alongside your existing email client.",
+      "Yes! Mailto Live is intended to be used alongside your existing email client.",
   },
   {
     question: "Is the code open-source?",
@@ -48,7 +48,7 @@ const faqs = [
     ),
   },
   {
-    question: "Which email providers does Inbox Zero support?",
+    question: "Which email providers does Mailto Live support?",
     answer:
       "We only support Gmail and Google Workspace email accounts today. We may add support for other email providers such as Outlook in the future.",
   },

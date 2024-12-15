@@ -39,12 +39,12 @@ export default function SummaryEmail(props: SummaryEmailProps) {
     //   {
     //     from: "James <james@example.com>",
     //     subject: "Quick catchup",
-    //     rule: "Inbox Zero",
+    //     rule: "Mailto Live",
     //   },
     //   {
     //     from: "Matt <matt@example.com>",
     //     subject: "How are you?",
-    //     rule: "Inbox Zero",
+    //     rule: "Mailto Live",
     //   },
     // ],
     pendingCount = 23,
@@ -53,7 +53,7 @@ export default function SummaryEmail(props: SummaryEmailProps) {
   return (
     <Html>
       <Head />
-      <Preview>Your weekly Inbox Zero update.</Preview>
+      <Preview>Your weekly Mailto Live update.</Preview>
       <Tailwind>
         <Body className="bg-white my-auto mx-auto font-sans">
           <Container className="border border-solid border-[#eaeaea] rounded my-[40px] mx-auto p-[20px] w-[465px]">
@@ -63,7 +63,7 @@ export default function SummaryEmail(props: SummaryEmailProps) {
                   src={"https://mailto.live/icon.png"}
                   width="40"
                   height="40"
-                  alt="Inbox Zero"
+                  alt="Mailto Live"
                   className="mx-auto my-0"
                 />
               </Link>
@@ -71,7 +71,7 @@ export default function SummaryEmail(props: SummaryEmailProps) {
 
             <Section>
               <Text className="text-[24px] font-semibold pt-8">
-                Your weekly Inbox Zero update
+                Your weekly Mailto Live update
               </Text>
 
               <Text style={paragraph}>

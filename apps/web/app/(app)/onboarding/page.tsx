@@ -24,9 +24,9 @@ export default function OnboardingPage({
       <LoadStats loadBefore showToast={false} />
 
       <div className="px-4 xl:px-0">
-        <PageHeading>First steps to Inbox Zero</PageHeading>
+        <PageHeading>First steps to Mailto Live</PageHeading>
         <TypographyP>
-          Get to know Inbox Zero and set up your account.
+          Get to know Mailto Live and set up your account.
         </TypographyP>
       </div>
 
@@ -57,7 +57,7 @@ export default function OnboardingPage({
             },
             {
               title: "Continue",
-              description: "Get started with Inbox Zero",
+              description: "Get started with Mailto Live",
               content: <OnboardingFinish />,
               active: step === 4,
             },

@@ -102,9 +102,9 @@ export function ColdEmailForm({
       },
       {
         value: ColdEmailSetting.LIST,
-        label: "List in Inbox Zero",
+        label: "List in Mailto Live",
         description:
-          "List cold emails in Inbox Zero. Make no changes to my inbox",
+          "List cold emails in Mailto Live. Make no changes to my inbox",
       },
       {
         value: ColdEmailSetting.DISABLED,

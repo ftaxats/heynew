@@ -31,7 +31,7 @@ export function FeaturesPrivacy() {
             host it yourself.
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Inbox Zero has undergone a thorough security process with Google to
+            Mailto Live has undergone a thorough security process with Google to
             ensure the protection of your emails. You can even self-host Inbox
             Zero on your own infrastructure.
           </p>
@@ -164,7 +164,7 @@ export function FeaturesAutomation() {
       imageSide="left"
       title={selectedVariant.title}
       subtitle={selectedVariant.subtitle}
-      description="Keep getting emails that require the same response? Let Inbox Zero handle it."
+      description="Keep getting emails that require the same response? Let Mailto Live handle it."
       image="/images/ai-automation.png"
       features={featuresAutomations}
     />
@@ -181,7 +181,7 @@ const featuresColdEmailBlocker = [
   {
     name: "Adjust cold email prompt",
     description:
-      "Tell Inbox Zero what constitutes a cold email for you. It will block them based on your instructions.",
+      "Tell Mailto Live what constitutes a cold email for you. It will block them based on your instructions.",
     icon: SparklesIcon,
   },
   {
