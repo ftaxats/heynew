@@ -117,7 +117,7 @@ const nextConfig = {
       },
       {
         source: "/twitter",
-        destination: "https://twitter.com/inboxzero_ai",
+        destination: "https://twitter.com/mailto_live",
         permanent: true,
       },
       {

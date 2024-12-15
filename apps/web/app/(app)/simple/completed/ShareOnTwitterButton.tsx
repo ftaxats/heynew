@@ -21,7 +21,7 @@ I cleaned up ${Object.keys(handled).length} emails in ${formatTime(
           calculateTimePassed(endTime || new Date(), startTime),
         )} minutes!
 
-Thanks @inboxzero_ai!`)}`}
+Thanks @mailto_live!`)}`}
         target="_blank"
       >
         Share on Twitter
