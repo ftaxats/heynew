@@ -70,19 +70,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: "https://mailto.live/blog/post/escape-email-trap-unsubscribe-for-good",
     },
     {
-      url: "https://docs.getinboxzero.com/",
+      url: "https://docs.mailto.live/",
     },
     {
-      url: "https://docs.getinboxzero.com/introduction",
+      url: "https://docs.mailto.live/introduction",
     },
     {
-      url: "https://docs.getinboxzero.com/essentials/email-ai-automation",
+      url: "https://docs.mailto.live/essentials/email-ai-automation",
     },
     {
-      url: "https://docs.getinboxzero.com/essentials/bulk-email-unsubscriber",
+      url: "https://docs.mailto.live/essentials/bulk-email-unsubscriber",
     },
     {
-      url: "https://docs.getinboxzero.com/essentials/cold-email-blocker",
+      url: "https://docs.mailto.live/essentials/cold-email-blocker",
     },
   ];
 

@@ -103,7 +103,7 @@ const bottomLinks: NavItem[] = [
   },
   {
     name: "User Guide",
-    href: "https://docs.getinboxzero.com",
+    href: "https://docs.mailto.live",
     target: "_blank",
     icon: BookIcon,
   },
