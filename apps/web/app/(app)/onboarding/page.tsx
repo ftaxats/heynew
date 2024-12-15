@@ -24,7 +24,7 @@ export default function OnboardingPage({
       <LoadStats loadBefore showToast={false} />
 
       <div className="px-4 xl:px-0">
-        <PageHeading>First steps to Mailto Live</PageHeading>
+        <PageHeading>First steps to clean your inbox</PageHeading>
         <TypographyP>
           Get to know Mailto Live and set up your account.
         </TypographyP>

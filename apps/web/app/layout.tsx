@@ -27,7 +27,7 @@ const calFont = localFont({
 
 const title = "Mailto Live | Automate and clean your inbox";
 const description =
-  "Mailto Live is your AI personal assistant for email and the quickest way to reach Mailto Live. Automate your email, bulk unsubscribe from newsletters, block cold emails, and view your email analytics. Open-source.";
+  "Mailto Live is your AI personal assistant for email and the quickest way to reach Inbox Zero. Automate your email, bulk unsubscribe from newsletters, block cold emails, and view your email analytics. Open-source.";
 
 export const metadata: Metadata = {
   title,

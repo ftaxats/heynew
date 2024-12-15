@@ -36,7 +36,7 @@ export const examplePrompts = [
   'Label marketing emails as "Marketing" and archive them',
   'Label emails that require a reply as "Reply Required"',
   'Label urgent emails as "Urgent"',
-  'Label receipts as "Receipt" and forward them to jane@accounting.com',
+  'Label receipts as "Receipt" and forward them to akshat@accounting.com',
   'Label pitch decks as "Pitch Deck" and forward them to john@investing.com',
   "Reply to cold emails by telling them to check out Mailto Live. Then mark them as spam",
   'Label high priority emails as "High Priority"',
