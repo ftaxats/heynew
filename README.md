@@ -1,4 +1,4 @@
-[![](apps/web/app/opengraph-image.png)](https://www.getinboxzero.com)
+[![](apps/web/app/opengraph-image.png)](https://mailto.live)
 
 <p align="center">
   <a href="https://mailto.live">

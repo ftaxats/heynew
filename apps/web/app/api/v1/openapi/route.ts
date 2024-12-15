@@ -30,7 +30,7 @@ registry.registerPath({
       groupId: z
         .string()
         .describe(
-          "You can find the group id by going to `https://www.getinboxzero.com/automation?tab=groups`, clicking `Matching Emails`, and then copying the id from the URL.",
+          "You can find the group id by going to `https://mailto.live/automation?tab=groups`, clicking `Matching Emails`, and then copying the id from the URL.",
         ),
     }),
     query: groupEmailsQuerySchema,

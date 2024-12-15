@@ -29,7 +29,7 @@ export interface StatsUpdateEmailProps {
 
 export default function StatsUpdateEmail(props: StatsUpdateEmailProps) {
   const {
-    baseUrl = "https://www.getinboxzero.com",
+    baseUrl = "https://mailto.live",
     // userEmail = "hello@example.com",
     received = 112,
     receivedPercentageDifference = 12,
@@ -62,7 +62,7 @@ export default function StatsUpdateEmail(props: StatsUpdateEmailProps) {
             <Section className="mt-8">
               <Link href={baseUrl} className="text-[15px]">
                 <Img
-                  src={"https://www.getinboxzero.com/icon.png"}
+                  src={"https://mailto.live/icon.png"}
                   width="40"
                   height="40"
                   alt="Inbox Zero"

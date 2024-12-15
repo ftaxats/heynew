@@ -35,7 +35,7 @@ const sendEmail = async ({
     headers: {
       ...(listUnsubscribe
         ? {
-            "List-Unsubscribe": "<https://www.getinboxzero.com/settings>",
+            "List-Unsubscribe": "<https://mailto.live/settings>",
             // TODO From Feb 2024 Google requires this for bulk senders
             // "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
           }
