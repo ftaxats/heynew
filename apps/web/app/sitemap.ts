@@ -76,13 +76,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: "https://docs.mailto.live/introduction",
     },
     {
-      url: "https://docs.mailto.live/essentials/email-ai-automation",
+      url: "https://docs.mailto.live/email-ai-automation",
     },
     {
-      url: "https://docs.mailto.live/essentials/bulk-email-unsubscriber",
+      url: "https://docs.mailto.live/bulk-email-unsubscriber",
     },
     {
-      url: "https://docs.mailto.live/essentials/cold-email-blocker",
+      url: "https://docs.mailto.live/cold-email-blocker",
     },
   ];
 

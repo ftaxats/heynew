@@ -60,7 +60,7 @@ export function BulkUnsubscribe() {
             <>
               Learn how to quickly bulk unsubscribe from unwanted emails. You
               can read more in our{" "}
-              <TextLink href="https://docs.mailto.live/essentials/bulk-email-unsubscriber">
+              <TextLink href="https://docs.mailto.live/bulk-email-unsubscriber">
                 documentation
               </TextLink>
               .
