@@ -97,22 +97,17 @@ const nextConfig = {
       },
       {
         source: "/feature-requests",
-        destination: "https://inboxzero.featurebase.app",
+        destination: "mailto:info@mailto.live",
         permanent: true,
       },
       {
         source: "/feedback",
-        destination: "https://inboxzero.featurebase.app",
+        destination: "mailto:info@mailto.live",
         permanent: true,
       },
       {
         source: "/roadmap",
-        destination: "https://inboxzero.featurebase.app/roadmap",
-        permanent: true,
-      },
-      {
-        source: "/changelog",
-        destination: "https://inboxzero.featurebase.app/changelog",
+        destination: "https://docs.mailto.live",
         permanent: true,
       },
       {
@@ -121,28 +116,18 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: "/github",
-        destination: "https://github.com/elie222/inbox-zero",
-        permanent: true,
-      },
-      {
-        source: "/discord",
-        destination: "https://discord.gg/UnBwsydrug",
-        permanent: true,
-      },
-      {
         source: "/linkedin",
-        destination: "https://www.linkedin.com/company/inbox-zero-ai/",
+        destination: "https://www.linkedin.com/company/mailtolive",
         permanent: true,
       },
       {
         source: "/waitlist",
-        destination: "https://airtable.com/shr7HNx6FXaIxR5q6",
+        destination: "https://docs.google.com/forms/d/e/1FAIpQLSdjpTwVaRLl-jPFylz_MqtzRAbXDc1QSr97QaLZHJsM3VV_yg/viewform?usp=header",
         permanent: true,
       },
       {
         source: "/affiliates",
-        destination: "https://inboxzero.lemonsqueezy.com/affiliates",
+        destination: "#",
         permanent: true,
       },
       {
