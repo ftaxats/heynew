@@ -32,8 +32,7 @@ export function FeaturesPrivacy() {
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
             Mailto Live has undergone a thorough security process with Google to
-            ensure the protection of your emails. You can even self-host Inbox
-            Zero on your own infrastructure.
+            ensure the protection of your emails.
           </p>
         </div>
       </div>
