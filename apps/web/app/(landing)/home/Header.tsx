@@ -9,10 +9,16 @@ import { Logo } from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/utils";
 
-const navigation = [
-  { name: "Features", href: "/#features" },
-  { name: "FAQ", href: "/#faq" },
-  { name: "Pricing", href: "/#pricing" },
+type NavigationItem = {
+  name: string;
+  href: string;
+  target?: "_self" | "_blank"; // Define target as optional
+};
+
+const navigation: NavigationItem[] = [
+  { name: "Features", href: "/#features", target: "_self" },
+  { name: "FAQ", href: "/#faq", target: "_self" },
+  { name: "Pricing", href: "/#pricing", target: "_self" },
 ];
 
 export function Header({ className }: { className?: string }) {
@@ -46,7 +52,7 @@ export function Header({ className }: { className?: string }) {
             <Link
               key={item.name}
               href={item.href}
-              target={item.target}
+              target={item.target || "_self"} // Provide default target if undefined
               prefetch={item.target !== "_blank"}
               className="text-sm font-semibold leading-6 text-gray-900"
             >
@@ -77,13 +83,6 @@ export function Header({ className }: { className?: string }) {
               Sign up
             </Link>
           </Button>
-
-          {/* <Link
-            href="/login"
-            className="text-sm font-semibold leading-6 text-gray-900"
-          >
-            Log in <span aria-hidden="true">&rarr;</span>
-          </Link> */}
         </div>
       </nav>
       <Dialog

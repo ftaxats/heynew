@@ -17,7 +17,7 @@ import {
 } from "@/utils/ai/choose-rule/run-rules";
 import { emailToContent, parseMessage } from "@/utils/mail";
 import { getMessage, getMessages } from "@/utils/gmail/message";
-import { getThread } from "@/utils/gmail/thread";
+import { isReplyInThread } from "@/utils/thread";
 import {
   createNewsletterGroupAction,
   createReceiptGroupAction,
@@ -29,17 +29,23 @@ import { isDefined, type ParsedMessage } from "@/utils/types";
 import { getSessionAndGmailClient } from "@/utils/actions/helpers";
 import { isActionError } from "@/utils/error";
 import {
+  reportAiMistakeBody,
+  type ReportAiMistakeBody,
   saveRulesPromptBody,
   type SaveRulesPromptBody,
+  testAiBody,
+  type TestAiBody,
 } from "@/utils/actions/validation";
 import { aiPromptToRules } from "@/utils/ai/rule/prompt-to-rules";
 import { aiDiffRules } from "@/utils/ai/rule/diff-rules";
 import { aiFindExistingRules } from "@/utils/ai/rule/find-existing-rules";
 import { aiGenerateRulesPrompt } from "@/utils/ai/rule/generate-rules-prompt";
-import { getLabelById, getLabels, labelVisibility } from "@/utils/gmail/label";
+import { getLabelById, getLabels } from "@/utils/gmail/label";
 import { withActionInstrumentation } from "@/utils/actions/middleware";
 import { createScopedLogger } from "@/utils/logger";
 import { aiFindSnippets } from "@/utils/ai/snippets/find-snippets";
+import { aiRuleFix } from "@/utils/ai/rule/rule-fix";
+import { labelVisibility } from "@/utils/gmail/constants";
 
 const logger = createScopedLogger("ai-rule");
 
@@ -81,32 +87,33 @@ export const runRulesAction = withActionInstrumentation(
       }),
     ]);
 
-    // fetch after getting the message to avoid rate limiting
-    const gmailThread = await getThread(email.threadId, gmail);
-
     if (hasExistingRule && !force) {
       logger.info("Skipping. Rule already exists.");
       return;
     }
 
     const message = parseMessage(gmailMessage);
-    const isThread = !!gmailThread.messages && gmailThread.messages.length > 1;
 
     await runRulesOnMessage({
       gmail,
       message,
       rules: user.rules,
       user: { ...user, email: user.email },
-      isThread,
+      isTest: false,
     });
   },
 );
 
 export const testAiAction = withActionInstrumentation(
   "testAi",
-  async ({ messageId, threadId }: { messageId: string; threadId: string }) => {
+  async (unsafeBody: TestAiBody) => {
     const sessionResult = await getSessionAndGmailClient();
     if (isActionError(sessionResult)) return sessionResult;
+
+    const { success, data, error } = testAiBody.safeParse(unsafeBody);
+    if (!success) return { error: error.message };
+    const { messageId } = data;
+
     const { gmail, user: u } = sessionResult;
 
     const user = await prisma.user.findUnique({
@@ -126,20 +133,15 @@ export const testAiAction = withActionInstrumentation(
     });
     if (!user) return { error: "User not found" };
 
-    const [gmailMessage, gmailThread] = await Promise.all([
-      getMessage(messageId, gmail, "full"),
-      getThread(threadId, gmail),
-    ]);
+    const gmailMessage = await getMessage(messageId, gmail, "full");
 
     const message = parseMessage(gmailMessage);
-    const isThread = !!gmailThread?.messages && gmailThread.messages.length > 1;
 
     const result = await testRulesOnMessage({
       gmail,
       message,
       rules: user.rules,
       user: { ...user, email: user.email },
-      isThread,
     });
 
     return result;
@@ -173,8 +175,8 @@ export const testAiCustomContentAction = withActionInstrumentation(
     const result = await testRulesOnMessage({
       gmail,
       message: {
-        id: "",
-        threadId: "",
+        id: "testMessageId",
+        threadId: "testThreadId",
         snippet: content,
         textPlain: content,
         headers: {
@@ -189,7 +191,6 @@ export const testAiCustomContentAction = withActionInstrumentation(
       },
       rules: user.rules,
       user,
-      isThread: false,
     });
 
     return result;
@@ -240,12 +241,11 @@ async function createRule(
   return prisma.rule.create({
     data: {
       name: result.name,
-      instructions: result.condition.aiInstructions || "",
       userId,
-      type: result.condition.type,
       actions: { createMany: { data: result.actions } },
       automate: shouldAutomate(result.actions),
       runOnThreads: false,
+      instructions: result.condition.aiInstructions,
       from: result.condition.static?.from,
       to: result.condition.static?.to,
       subject: result.condition.static?.subject,
@@ -264,15 +264,14 @@ async function updateRule(
     where: { id: ruleId },
     data: {
       name: result.name,
-      instructions: result.condition.aiInstructions || "",
       userId,
-      type: result.condition.type,
       actions: {
         deleteMany: {},
         createMany: { data: result.actions },
       },
       automate: shouldAutomate(result.actions),
       runOnThreads: false,
+      instructions: result.condition.aiInstructions,
       from: result.condition.static?.from,
       to: result.condition.static?.to,
       subject: result.condition.static?.subject,
@@ -860,5 +859,76 @@ export const setRuleEnabledAction = withActionInstrumentation(
       where: { id: ruleId, userId: session.user.id },
       data: { enabled },
     });
+  },
+);
+
+export const reportAiMistakeAction = withActionInstrumentation(
+  "reportAiMistake",
+  async (unsafeBody: ReportAiMistakeBody) => {
+    const session = await auth();
+    if (!session?.user.id) return { error: "Not logged in" };
+
+    const { success, data, error } = reportAiMistakeBody.safeParse(unsafeBody);
+    if (!success) return { error: error.message };
+    const { correctRuleId, incorrectRuleId, email, explanation } = data;
+
+    if (!correctRuleId && !incorrectRuleId)
+      return { error: "Either correct or incorrect rule ID is required" };
+
+    const [correctRule, incorrectRule, user] = await Promise.all([
+      correctRuleId
+        ? prisma.rule.findUnique({
+            where: { id: correctRuleId, userId: session.user.id },
+          })
+        : null,
+      incorrectRuleId
+        ? prisma.rule.findUnique({
+            where: { id: incorrectRuleId, userId: session.user.id },
+          })
+        : null,
+      prisma.user.findUnique({
+        where: { id: session.user.id },
+        select: {
+          email: true,
+          about: true,
+          aiProvider: true,
+          aiModel: true,
+          aiApiKey: true,
+        },
+      }),
+    ]);
+
+    if (correctRuleId && !correctRule)
+      return { error: "Correct rule not found" };
+
+    if (incorrectRuleId && !incorrectRule)
+      return { error: "Incorrect rule not found" };
+
+    if (!user) return { error: "User not found" };
+
+    const content = emailToContent({
+      textHtml: email.textHtml || null,
+      textPlain: email.textPlain || null,
+      snippet: email.snippet,
+    });
+
+    const result = await aiRuleFix({
+      user,
+      incorrectRule,
+      correctRule,
+      email: {
+        ...email,
+        content,
+      },
+      explanation: explanation?.trim() || undefined,
+    });
+
+    if (isActionError(result)) return { error: result.error };
+    if (!result) return { error: "Error fixing rule" };
+
+    return {
+      ruleId: result.rule === "matched_rule" ? incorrectRuleId : correctRuleId,
+      fixedInstructions: result.fixedInstructions,
+    };
   },
 );

@@ -25,6 +25,7 @@ import type {
 import { TestRulesMessage } from "@/app/(app)/cold-email-blocker/TestRulesMessage";
 import { decodeSnippet } from "@/utils/gmail/decode";
 import { SearchForm } from "@/components/SearchForm";
+
 export function TestRules() {
   return (
     <SlideOverSheet
@@ -174,6 +175,7 @@ function TestRulesContentRow(props: {
           subject={message.headers.subject}
           snippet={decodeSnippet(message.snippet)}
           userEmail={props.userEmail}
+          messageId={message.id}
         />
         <div className="ml-4">
           <Button

@@ -5,21 +5,12 @@ import {
   PARENT_LABEL,
   type InboxZeroLabel,
 } from "@/utils/label";
-
-export const messageVisibility = {
-  show: "show",
-  hide: "hide",
-} as const;
-export type MessageVisibility =
-  (typeof messageVisibility)[keyof typeof messageVisibility];
-
-export const labelVisibility = {
-  labelShow: "labelShow",
-  labelShowIfUnread: "labelShowIfUnread",
-  labelHide: "labelHide",
-} as const;
-export type LabelVisibility =
-  (typeof labelVisibility)[keyof typeof labelVisibility];
+import {
+  labelVisibility,
+  messageVisibility,
+  type LabelVisibility,
+  type MessageVisibility,
+} from "@/utils/gmail/constants";
 
 export const INBOX_LABEL_ID = "INBOX";
 export const SENT_LABEL_ID = "SENT";
@@ -160,11 +151,13 @@ async function createLabel({
   name,
   messageListVisibility,
   labelListVisibility,
+  color,
 }: {
   gmail: gmail_v1.Gmail;
   name: string;
   messageListVisibility?: MessageVisibility;
   labelListVisibility?: LabelVisibility;
+  color?: string;
 }) {
   try {
     const createdLabel = await gmail.users.labels.create({
@@ -173,19 +166,30 @@ async function createLabel({
         name,
         messageListVisibility,
         labelListVisibility,
+        color: color
+          ? { backgroundColor: color, textColor: "#000000" }
+          : undefined,
       },
     });
     return createdLabel.data;
   } catch (error) {
+    const errorMessage: string | undefined = (error as any).message;
+
+    // Handle label already exists case
     // May be happening due to a race condition where the label was created between the list and create?
-    if ((error as any).message?.includes("Label name exists or conflicts")) {
+    if (errorMessage?.includes("Label name exists or conflicts")) {
       console.warn(`Label already exists: ${name}`);
       const label = await getLabel({ gmail, name });
       if (label) return label;
-      console.error(`Label not found: ${name}`);
-      throw error;
+      throw new Error(`Label conflict but not found: ${name}`);
     }
-    throw error;
+
+    // Handle invalid label name case
+    if (errorMessage?.includes("Invalid label name"))
+      throw new Error(`Invalid Gmail label name: "${name}"`);
+
+    // Handle other errors with label name context
+    throw new Error(`Failed to create Gmail label "${name}": ${errorMessage}`);
   }
 }
 
@@ -233,15 +237,11 @@ export async function getOrCreateLabel({
 export async function getOrCreateInboxZeroLabel({
   gmail,
   key,
-  messageListVisibility,
-  labelListVisibility,
 }: {
   gmail: gmail_v1.Gmail;
   key: InboxZeroLabel;
-  messageListVisibility?: MessageVisibility;
-  labelListVisibility?: LabelVisibility;
 }) {
-  const name = inboxZeroLabels[key];
+  const { name, color } = inboxZeroLabels[key];
   const labels = await getLabels(gmail);
 
   // Create parent label if it doesn't exist
@@ -262,8 +262,9 @@ export async function getOrCreateInboxZeroLabel({
   const createdLabel = await createLabel({
     gmail,
     name,
-    messageListVisibility,
-    labelListVisibility,
+    messageListVisibility: messageVisibility.hide,
+    labelListVisibility: labelVisibility.labelShow,
+    color,
   });
   return createdLabel;
 }

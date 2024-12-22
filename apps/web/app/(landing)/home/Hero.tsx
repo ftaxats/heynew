@@ -40,7 +40,6 @@ export function Hero(props: {
       <SquaresPattern />
       <div className="pt-24 sm:pb-12 sm:pt-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          {/* <HeroTag /> */}
           <div className="mb-10">
             <ProductHuntBadge />
           </div>
@@ -73,56 +72,23 @@ export function Hero(props: {
   );
 }
 
-// function HeroTag() {
-//   return (
-//     <div className="mb-8 flex justify-center bg-white">
-//       <div className="relative flex items-center gap-x-4 rounded-full px-4 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-//         <a
-//           href="/product-hunt"
-//           className="flex items-center gap-x-1 font-semibold text-blue-600"
-//         >
-//           <span className="absolute inset-0" aria-hidden="true" />
-//           We are live on Product Hunt!
-//           <ChevronRightIcon
-//             className="-mr-2 h-5 w-5 text-gray-400"
-//             aria-hidden="true"
-//           />
-//         </a>
-//       </div>
-//     </div>
-//   );
-// }
-
 function ProductHuntBadge() {
   return (
     <div className="flex flex-col items-center justify-center gap-2 sm:flex-row">
       <a
-        href="https://www.producthunt.com/posts/inbox-zero-2?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-inbox&#0045;zero&#0045;2"
+        href="https://www.producthunt.com/posts/mailto-live?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-mailto&#0045;live"
         target="_blank"
         rel="noreferrer"
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=431438&theme=neutral&period=daily"
-          alt="Inbox&#0032;Zero - Clean&#0032;up&#0032;your&#0032;inbox&#0032;in&#0032;minutes&#0044;&#0032;open&#0032;source | Product Hunt"
+          src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=727877&theme=light"
+          alt="Mailto Live - AI Email Management & Gmail Cleanup Tool | Product Hunt"
           className="h-[54px] w-[250px]"
           width="250"
           height="54"
         />
       </a>
-
-      {/* <a
-        href="https://www.producthunt.com/posts/inbox-zero-5?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-inbox&#0045;zero&#0045;2"
-        target="_blank"
-      >
-        <img
-          src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=431438&theme=light"
-          alt="Inbox&#0032;Zero - Clean&#0032;up&#0032;your&#0032;inbox&#0032;in&#0032;minutes&#0044;&#0032;open&#0032;source | Product Hunt"
-          className="h-[54px] w-[250px]"
-          width="250"
-          height="54"
-        />
-      </a> */}
     </div>
   );
 }
