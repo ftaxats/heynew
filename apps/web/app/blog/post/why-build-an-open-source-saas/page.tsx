@@ -18,7 +18,7 @@ export default function Page() {
         headline="Why Build An Open Source SaaS"
         datePublished="2024-01-25T08:00:00+00:00"
         dateModified="2024-01-25T08:00:00+00:00"
-        authorName="Elie Steinbock"
+        authorName="Akshat Shah"
         authorUrl="https://elie.tech"
         image={[]}
       />

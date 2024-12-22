@@ -36,7 +36,7 @@ const mdxPosts: Post[] = [
     datetime: "2024-01-22",
     // category: { title: "Marketing", href: "#" },
     author: {
-      name: "Elie Steinbock",
+      name: "Akshat Shah",
       role: "Founder",
       href: "#",
       imageUrl: "/images/blog/elie-profile.jpg",
@@ -52,7 +52,7 @@ const mdxPosts: Post[] = [
     datetime: "2024-01-25",
     // category: { title: "Marketing", href: "#" },
     author: {
-      name: "Elie Steinbock",
+      name: "Akshat Shah",
       role: "Founder",
       href: "#",
       imageUrl: "/images/blog/elie-profile.jpg",
@@ -68,7 +68,7 @@ const mdxPosts: Post[] = [
     date: "Aug 22, 2024",
     datetime: "2024-08-22",
     author: {
-      name: "Elie Steinbock",
+      name: "Akshat Shah",
       role: "Founder",
       href: "#",
       imageUrl: "/images/blog/elie-profile.jpg",
@@ -84,7 +84,7 @@ const mdxPosts: Post[] = [
     datetime: "2024-02-22",
     // category: { title: "Marketing", href: "#" },
     author: {
-      name: "Elie Steinbock",
+      name: "Akshat Shah",
       role: "Founder",
       href: "#",
       imageUrl: "/images/blog/elie-profile.jpg",
@@ -100,7 +100,7 @@ const mdxPosts: Post[] = [
     datetime: "2024-03-05",
     // category: { title: "Marketing", href: "#" },
     author: {
-      name: "Elie Steinbock",
+      name: "Akshat Shah",
       role: "Founder",
       href: "#",
       imageUrl: "/images/blog/elie-profile.jpg",
@@ -115,7 +115,7 @@ const mdxPosts: Post[] = [
     date: "June 26, 2024",
     datetime: "2024-06-26",
     author: {
-      name: "Elie Steinbock",
+      name: "Akshat Shah",
       role: "Founder",
       href: "#",
       imageUrl: "/images/blog/elie-profile.jpg",

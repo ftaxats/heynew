@@ -18,7 +18,7 @@ export default function Page() {
         headline="Alternatives to Skiff Mail"
         datePublished="2024-02-11T08:00:00+00:00"
         dateModified="2024-02-11T08:00:00+00:00"
-        authorName="Elie Steinbock"
+        authorName="Akshat Shah"
         authorUrl="https://elie.tech"
         image={[]}
       />

@@ -18,7 +18,7 @@ export default function Page() {
         headline="How to Bulk Unsubscribe from Emails"
         datePublished="2024-03-05T08:00:00+00:00"
         dateModified="2024-03-05T08:00:00+00:00"
-        authorName="Elie Steinbock"
+        authorName="Akshat Shah"
         authorUrl="https://elie.tech"
         image={[]}
       />

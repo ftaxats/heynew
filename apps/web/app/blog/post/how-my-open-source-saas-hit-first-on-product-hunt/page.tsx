@@ -18,7 +18,7 @@ export default function Page() {
         headline="How Mailto Live hit #1 on Product Hunt"
         datePublished="2024-01-22T08:00:00+00:00"
         dateModified="2024-01-22T08:00:00+00:00"
-        authorName="Elie Steinbock"
+        authorName="Akshat Shah"
         authorUrl="https://elie.tech"
         image={[]}
       />
