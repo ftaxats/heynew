@@ -28,38 +28,6 @@ type SanityPost = {
 
 const mdxPosts: Post[] = [
   {
-    title: "How Mailto Live hit #1 on Product Hunt",
-    file: "how-my-open-source-saas-hit-first-on-product-hunt",
-    description:
-      "Two weeks ago I launched Mailto Live on Product Hunt. It finished in first place with over 1000 upvotes and gained thousands of new users. The app, Mailto Live, helps you clean up your inbox fast. It lets you bulk unsubscribe from newsletters, automate emails with an AI assistant, automatically block cold emails, and provides email analytics.",
-    date: "Jan 22, 2024",
-    datetime: "2024-01-22",
-    // category: { title: "Marketing", href: "#" },
-    author: {
-      name: "Akshat Shah",
-      role: "Founder",
-      href: "#",
-      imageUrl: "/images/blog/elie-profile.jpg",
-    },
-    imageUrl: "/images/reach-inbox-zero.png",
-  },
-  {
-    title: "Why Build An Open Source SaaS",
-    file: "why-build-an-open-source-saas",
-    description:
-      "Open source SaaS products are blowing up. This is why you should consider building one.",
-    date: "Jan 25, 2024",
-    datetime: "2024-01-25",
-    // category: { title: "Marketing", href: "#" },
-    author: {
-      name: "Akshat Shah",
-      role: "Founder",
-      href: "#",
-      imageUrl: "/images/blog/elie-profile.jpg",
-    },
-    imageUrl: "/images/reach-inbox-zero.png",
-  },
-  {
     title:
       "Escape the Email Trap: How to Unsubscribe for Good When Senders Won't Let Go",
     file: "escape-email-trap-unsubscribe-for-good",
@@ -71,7 +39,7 @@ const mdxPosts: Post[] = [
       name: "Akshat Shah",
       role: "Founder",
       href: "#",
-      imageUrl: "/images/blog/elie-profile.jpg",
+      imageUrl: "/images/blog/akshat-profile.jpg",
     },
     imageUrl: "/images/reach-inbox-zero.png",
   },
@@ -87,7 +55,7 @@ const mdxPosts: Post[] = [
       name: "Akshat Shah",
       role: "Founder",
       href: "#",
-      imageUrl: "/images/blog/elie-profile.jpg",
+      imageUrl: "/images/blog/akshat-profile.jpg",
     },
     imageUrl: "/images/reach-inbox-zero.png",
   },
@@ -103,7 +71,7 @@ const mdxPosts: Post[] = [
       name: "Akshat Shah",
       role: "Founder",
       href: "#",
-      imageUrl: "/images/blog/elie-profile.jpg",
+      imageUrl: "/images/blog/akshat-profile.jpg",
     },
     imageUrl: "/images/reach-inbox-zero.png",
   },
@@ -118,7 +86,7 @@ const mdxPosts: Post[] = [
       name: "Akshat Shah",
       role: "Founder",
       href: "#",
-      imageUrl: "/images/blog/elie-profile.jpg",
+      imageUrl: "/images/blog/akshat-profile.jpg",
     },
     imageUrl: "/images/reach-inbox-zero.png",
   },
@@ -158,7 +126,7 @@ const mdxPosts: Post[] = [
     title: "Mastering Mailto Live - A Productivity Guide for Entrepreneurs",
     file: "inbox-zero-workflow-for-entrepreneurs",
     description:
-      "Learn how to achieve and maintain Mailto Live as an entrepreneur with effective strategies, tools, and tips for efficient email management.",
+      "Learn how to achieve and maintain Inbox Zero as an entrepreneur with effective strategies, tools, and tips for efficient email management.",
     date: "Jun 27, 2024",
     datetime: "2024-06-27",
     author: {
@@ -227,7 +195,7 @@ function Posts({ posts }: { posts: SanityPost[] }) {
         name: post.authorName,
         role: "Founder",
         href: "#",
-        imageUrl: "/images/blog/elie-profile.jpg",
+        imageUrl: "/images/blog/akshat-profile.jpg",
       },
       imageUrl: post.imageURL ?? "/images/reach-inbox-zero.png",
     })),
