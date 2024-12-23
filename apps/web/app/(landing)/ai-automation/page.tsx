@@ -5,26 +5,47 @@ import { Testimonials } from "@/app/(landing)/home/Testimonials";
 import { Pricing } from "@/app/(app)/premium/Pricing";
 import { FAQs } from "@/app/(landing)/home/FAQs";
 import { CTA } from "@/app/(landing)/home/CTA";
-import { FeaturesAutomation } from "@/app/(landing)/home/Features";
+import { FeaturesStats } from "@/app/(landing)/home/Features";
 import { BasicLayout } from "@/components/layouts/BasicLayout";
 
 export const metadata: Metadata = {
-  title: "AI Personal Assistant for Email | Mailto Live",
+  title: "Boost Productivity with AI Email Analytics | MailtoLive",
   description:
-    "Mailto Live's AI email assistant simplifies your email management. It smartly handles repetitive queries, automates responses, and efficiently organizes your inbox, streamlining your email workflow for maximum efficiency.",
-  alternates: { canonical: "/ai-automation" },
+    "Unlock the power of AI to transform your email management. Discover insights, enhance productivity, and achieve inbox zero with MailtoLive's AI-driven email analytics.",
+  alternates: { canonical: "/email-analytics" },
+  keywords: [
+    "AI email analytics",
+    "email management software",
+    "inbox zero method",
+    "Gmail automation",
+    "email productivity",
+  ],
+  openGraph: {
+    title: "Boost Productivity with AI Email Analytics | MailtoLive",
+    description:
+      "Unlock the power of AI to transform your email management. Discover insights, enhance productivity, and achieve inbox zero with MailtoLive's AI-driven email analytics.",
+    url: "https://mailto.live/email-analytics",
+    images: [
+      {
+        url: "/images/analytics.png",
+        width: 1200,
+        height: 630,
+        alt: "Email Analytics Dashboard",
+      },
+    ],
+  },
 };
 
-export default function AiAutomation() {
+export default function EmailAnalytics() {
   return (
     <BasicLayout>
       <Hero
-        title="Automate your email with AI"
-        subtitle="Mailto Live's AI email assistant simplifies your email management. It smartly handles repetitive queries, automates responses, and efficiently organizes your inbox, streamlining your email workflow for maximum efficiency."
-        image="/images/ai-automation.png"
+        title="Understand Your Inbox with AI Email Analytics"
+        subtitle="Maximize your email management efficiency by gaining insights into your email patterns and improving productivity."
+        image="/images/analytics.png"
       />
       <Testimonials />
-      <FeaturesAutomation />
+      <FeaturesStats />
       <Suspense>
         <div className="pb-32">
           <Pricing />

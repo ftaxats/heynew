@@ -6,22 +6,24 @@ import { env } from "@/env";
 import { HeroAB } from "@/app/(landing)/home/HeroAB";
 import HeroVideoDialog from "@/components/HeroVideoDialog";
 
-export function HeroText(props: {
+export function HeroText({
+  children,
+  className,
+}: {
   children: React.ReactNode;
   className?: string;
 }) {
-  const { className, ...rest } = props;
-
   return (
     <h1
       className={cn("font-cal text-4xl text-gray-900 sm:text-6xl", className)}
-      {...rest}
-    />
+    >
+      {children}
+    </h1>
   );
 }
 
-export function HeroSubtitle(props: { children: React.ReactNode }) {
-  return <p className="mt-6 text-lg leading-8 text-gray-600" {...props} />;
+export function HeroSubtitle({ children }: { children: React.ReactNode }) {
+  return <p className="mt-6 text-lg leading-8 text-gray-600">{children}</p>;
 }
 
 export function HeroHome() {
@@ -30,7 +32,11 @@ export function HeroHome() {
   return <Hero />;
 }
 
-export function Hero(props: {
+export function Hero({
+  title,
+  subtitle,
+  image,
+}: {
   title?: React.ReactNode;
   subtitle?: React.ReactNode;
   image?: string;
@@ -46,10 +52,10 @@ export function Hero(props: {
 
           <div className="mx-auto max-w-xl text-center">
             <HeroText>
-              {props.title || "Stop wasting half your day in Gmail"}
+              {title || "Stop wasting half your day in Gmail"}
             </HeroText>
             <HeroSubtitle>
-              {props.subtitle ||
+              {subtitle ||
                 "Automate your email with AI, bulk unsubscribe from newsletters, and block cold emails. Open-source."}
             </HeroSubtitle>
             <CTAButtons />
@@ -60,7 +66,7 @@ export function Hero(props: {
               className="block"
               animationStyle="top-in-bottom-out"
               videoSrc="https://ftaxatshahchanel.com"
-              thumbnailSrc={props.image || "/images/newsletters.png"}
+              thumbnailSrc={image || "/images/newsletters.png"}
               thumbnailAlt="Bulk Unsubscriber Screenshot"
             />
           </div>
@@ -78,7 +84,6 @@ function ProductHuntBadge() {
         target="_blank"
         rel="noreferrer"
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=727877&theme=light"
           alt="Mailto Live - AI Email Management & Gmail Cleanup Tool | Product Hunt"
