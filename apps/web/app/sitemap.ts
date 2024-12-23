@@ -52,12 +52,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1,
     },
     {
-      url: "https://mailto.live/blog/post/how-my-open-source-saas-hit-first-on-product-hunt",
-    },
-    {
-      url: "https://mailto.live/blog/post/why-build-an-open-source-saas",
-    },
-    {
       url: "https://mailto.live/blog/post/alternatives-to-skiff-mail",
     },
     {
