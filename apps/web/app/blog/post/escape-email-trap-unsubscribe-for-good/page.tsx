@@ -20,7 +20,7 @@ export default function Page() {
         datePublished="2024-08-22T08:00:00+00:00"
         dateModified="2024-08-22T08:00:00+00:00"
         authorName="Akshat Shah"
-        authorUrl="https://elie.tech"
+        authorUrl="#"
         image={[]}
       />
       <Content />
