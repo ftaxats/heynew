@@ -56,7 +56,7 @@ export function Hero({
             </HeroText>
             <HeroSubtitle>
               {subtitle ||
-                "Automate your email with AI, bulk unsubscribe from newsletters, and block cold emails. Open-source."}
+                "Automate your email with AI, bulk unsubscribe from newsletters, and block cold emails."}
             </HeroSubtitle>
             <CTAButtons />
           </div>

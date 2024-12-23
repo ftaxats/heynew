@@ -13,17 +13,17 @@ const copy: {
   control: {
     title: "Stop wasting half your day in Gmail",
     subtitle:
-      "Automate your email with AI, bulk unsubscribe from newsletters, and block cold emails. Open-source.",
+      "Automate your email with AI, bulk unsubscribe from newsletters, and block cold emails.",
   },
   "clean-up-in-minutes": {
     title: "Clean Up Your Inbox In Minutes",
     subtitle:
-      "Bulk unsubscribe from newsletters, automate your emails with AI, block cold emails, and view your analytics. Open-source.",
+      "Bulk unsubscribe from newsletters, automate your emails with AI, block cold emails, and view your analytics. ",
   },
   "half-the-time": {
     title: "Spend 50% less time on email",
     subtitle:
-      "Automate your email with AI, bulk unsubscribe from newsletters, and block cold emails. Open-source.",
+      "Automate your email with AI, bulk unsubscribe from newsletters, and block cold emails.",
   },
 };
 
