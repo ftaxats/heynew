@@ -15,7 +15,7 @@ export function SimpleModeOnboarding() {
           you reach Mailto Live for the day quickly.
         </>
       }
-      videoId="YjcGsWWfFYI"
+      videoId="1234567"
       isModalOpen={isOpen}
       setIsModalOpen={setIsOpen}
     />

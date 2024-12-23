@@ -55,13 +55,11 @@ export function Hero(props: {
             <CTAButtons />
           </div>
 
-          <LogoCloud />
-
           <div className="relative mt-16 flow-root sm:mt-24">
             <HeroVideoDialog
               className="block"
               animationStyle="top-in-bottom-out"
-              videoSrc="https://www.youtube.com/embed/hfvKvTHBjG0?autoplay=1"
+              videoSrc="https://ftaxatshahchanel.com"
               thumbnailSrc={props.image || "/images/newsletters.png"}
               thumbnailAlt="Bulk Unsubscriber Screenshot"
             />

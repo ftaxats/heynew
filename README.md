@@ -10,7 +10,7 @@
 
 ## Demo Video
 
-[![Mailto Live demo](/video-thumbnail.png)](http://www.youtube.com/watch?v=hfvKvTHBjG0)
+[![Mailto Live demo](/video-thumbnail.png)](http://www.ftaxatshahchanel.com/watch?v=hfvKvTHBjG0)
 
 ## Key Features
 

@@ -78,6 +78,33 @@ const navigation = {
   ],
 };
 
+function FooterList(props: {
+  title: string;
+  items: { name: string; href: string; target?: string }[];
+}) {
+  return (
+    <>
+      <h3 className="text-sm font-semibold leading-6 text-gray-900">
+        {props.title}
+      </h3>
+      <ul className="mt-6 space-y-4">
+        {props.items.map((item) => (
+          <li key={item.name}>
+            <Link
+              href={item.href}
+              target={item.target}
+              prefetch={item.target !== "_blank"}
+              className="text-sm leading-6 text-gray-600 hover:text-gray-900"
+            >
+              {item.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </>
+  );
+}
+
 export function Footer() {
   return (
     <footer className="relative z-50">
@@ -116,34 +143,17 @@ export function Footer() {
         <p className="mt-10 text-center text-xs leading-5 text-gray-500">
           &copy; {new Date().getFullYear()} Mailto Live. All rights reserved.
         </p>
+        <p className="mt-2 text-center text-xs leading-5 text-gray-400">
+          Inspired by the incredible work of{" "}
+          <Link
+            href="https://github.com/elie222/inbox-zero"
+            className="hover:underline"
+          >
+            Ellie
+          </Link>
+          .
+        </p>
       </div>
     </footer>
-  );
-}
-
-function FooterList(props: {
-  title: string;
-  items: { name: string; href: string; target?: string }[];
-}) {
-  return (
-    <>
-      <h3 className="text-sm font-semibold leading-6 text-gray-900">
-        {props.title}
-      </h3>
-      <ul className="mt-6 space-y-4">
-        {props.items.map((item) => (
-          <li key={item.name}>
-            <Link
-              href={item.href}
-              target={item.target}
-              prefetch={item.target !== "_blank"}
-              className="text-sm leading-6 text-gray-600 hover:text-gray-900"
-            >
-              {item.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </>
   );
 }
