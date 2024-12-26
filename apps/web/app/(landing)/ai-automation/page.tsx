@@ -5,7 +5,7 @@ import { Testimonials } from "@/app/(landing)/home/Testimonials";
 import { Pricing } from "@/app/(app)/premium/Pricing";
 import { FAQs } from "@/app/(landing)/home/FAQs";
 import { CTA } from "@/app/(landing)/home/CTA";
-import { FeaturesStats } from "@/app/(landing)/home/Features";
+import { FeaturesAiAssistant } from "@/app/(landing)/home/Features";
 import { BasicLayout } from "@/components/layouts/BasicLayout";
 
 export const metadata: Metadata = {
@@ -45,7 +45,7 @@ export default function EmailAnalytics() {
         image="/images/analytics.png"
       />
       <Testimonials />
-      <FeaturesStats />
+      <FeaturesAiAssistant />
       <Suspense>
         <div className="pb-32">
           <Pricing />

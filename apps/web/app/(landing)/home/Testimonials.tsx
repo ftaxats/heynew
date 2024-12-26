@@ -2,6 +2,7 @@
 // import clsx from "clsx";
 // import Image from "next/image";
 
+// Keeping the featuredTestimonial constant if it's needed later
 const featuredTestimonial = {
   body: "Loving it so far! Cleaned up my top cluttering newsletter and promotional email subscriptions in just a few minutes.",
   author: {
@@ -13,16 +14,7 @@ const featuredTestimonial = {
   },
 };
 
-// If `testimonials` isn't used anywhere, remove it completely
-// const testimonials: {
-//   body: string;
-//   author: {
-//     name: string;
-//     handle: string;
-//     imageUrl: string;
-//   };
-// }[][][] = [];
-
+// Disable the Testimonials section by returning null
 export function Testimonials() {
-  return null; // Return null to render nothing
+  return null; // This ensures the section is not rendered
 }
