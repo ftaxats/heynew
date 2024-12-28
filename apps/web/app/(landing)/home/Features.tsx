@@ -30,8 +30,8 @@ export function FeaturesPrivacy() {
             Privacy first
           </h2>
           <p className="mt-2 font-cal text-3xl text-gray-900 sm:text-4xl">
-            Approved by Google. Open Source. See exactly what our code does. Or
-            host it yourself.
+            Approved by Google. See exactly what our code does. Or host it
+            yourself.
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
             Mailto Live has undergone a thorough security process with Google to
