@@ -7,7 +7,3 @@
   <p align="center">
     Open source email app to reach Inbox Zero fast.
     <br />
-
-## Demo Video
-
-[![Mailto Live demo](/video-thumbnail.png)](http://www.ftaxatshahchanel.com/watch?v=hfvKvTHBjG0)
