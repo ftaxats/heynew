@@ -40,6 +40,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: "https://mailto.live/new-email-senders",
     },
     {
+      url: "https://mailto.live/waitlist",
+    },
+    {
       url: "https://mailto.live/privacy",
     },
     {
