@@ -122,7 +122,7 @@ const nextConfig = {
       },
       {
         source: "/waitlist",
-        destination: "https://docs.google.com/forms/d/e/1FAIpQLSdjpTwVaRLl-jPFylz_MqtzRAbXDc1QSr97QaLZHJsM3VV_yg/viewform?usp=header",
+        destination: "https://mailto-live-waitlist.vercel.app",
         permanent: true,
       },
       {
