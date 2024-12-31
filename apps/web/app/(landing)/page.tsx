@@ -8,6 +8,7 @@ import { Pricing } from "@/app/(app)/premium/Pricing";
 import { FAQs } from "@/app/(landing)/home/FAQs";
 import { CTA } from "@/app/(landing)/home/CTA";
 import { BasicLayout } from "@/components/layouts/BasicLayout";
+import { LogoCloud } from "@/app/(landing)/home/LogoCloud";
 
 export const metadata: Metadata = { alternates: { canonical: "/" } };
 
@@ -15,6 +16,7 @@ export default function Home() {
   return (
     <BasicLayout>
       <HeroHome />
+      <LogoCloud />
       <Testimonials />
       <Privacy />
       <FeaturesHome />
