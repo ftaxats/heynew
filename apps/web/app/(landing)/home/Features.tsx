@@ -21,6 +21,28 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 
+export function FeaturesPrivacy() {
+  return (
+    <div className="bg-white py-24 sm:py-32" id="features">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl lg:text-center">
+          <h2 className="font-cal text-base leading-7 text-blue-600">
+            Privacy first
+          </h2>
+          <p className="mt-2 font-cal text-3xl text-gray-900 sm:text-4xl">
+            Approved by Google. See exactly what our code does. Or host it
+            yourself.
+          </p>
+          <p className="mt-6 text-lg leading-8 text-gray-600">
+            Mailto Live has undergone a thorough security process with Google to
+            ensure the protection of your emails.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function FeaturesWithImage(props: {
   imageSide: "left" | "right";
   title: string;
@@ -187,7 +209,7 @@ const featuresColdEmailBlocker = [
   {
     name: "Adjust cold email prompt",
     description:
-      "Tell Inbox Zero what constitutes a cold email for you. It will block them based on your instructions.",
+      "Tell Mailto Live what constitutes a cold email for you. It will block them based on your instructions.",
     icon: SparklesIcon,
   },
   {

@@ -25,9 +25,9 @@ const calFont = localFont({
   display: "swap",
 });
 
-const title = "Inbox Zero | Automate and clean your inbox";
+const title = "AI Email Management & Gmail Cleanup Tool | Mailto Live App";
 const description =
-  "Inbox Zero is your AI personal assistant for email and the quickest way to reach inbox zero. Automate your email, bulk unsubscribe from newsletters, block cold emails, and view your email analytics. Open-source.";
+  "Effortless email management with AI. Clean Gmail, bulk unsubscribe & smart label organization. The best Unroll.me alternative. Try free for 7 days.";
 
 export const metadata: Metadata = {
   title,
@@ -35,33 +35,30 @@ export const metadata: Metadata = {
   openGraph: {
     title,
     description,
-    siteName: "Inbox Zero",
+    siteName: "Mailto Live",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
-    creator: "@inboxzero_ai",
+    creator: "@mailto_live",
   },
   metadataBase: new URL(env.NEXT_PUBLIC_BASE_URL),
-  // issues with robots.txt: https://github.com/vercel/next.js/issues/58615#issuecomment-1852457285
   robots: {
     index: true,
     follow: true,
   },
-  // pwa
-  applicationName: "Inbox Zero",
+  applicationName: "Mailto Live",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "Inbox Zero",
+    title: "Mailto Live",
     startupImage,
   },
   formatDetection: {
     telephone: false,
   },
-  // safe area for iOS PWA
   other: {
     "mobile-web-app-capable": "yes",
     "apple-mobile-web-app-capable": "yes",

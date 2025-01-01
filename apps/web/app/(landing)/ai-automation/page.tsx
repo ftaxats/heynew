@@ -9,19 +9,40 @@ import { FeaturesAiAssistant } from "@/app/(landing)/home/Features";
 import { BasicLayout } from "@/components/layouts/BasicLayout";
 
 export const metadata: Metadata = {
-  title: "AI Personal Assistant for Email | Inbox Zero",
+  title: "Boost Productivity with AI Email Analytics | MailtoLive",
   description:
-    "Inbox Zero's AI email assistant simplifies your email management. It smartly handles repetitive queries, automates responses, and efficiently organizes your inbox, streamlining your email workflow for maximum efficiency.",
-  alternates: { canonical: "/ai-automation" },
+    "Unlock the power of AI to transform your email management. Discover insights, enhance productivity, and achieve inbox zero with MailtoLive's AI-driven email analytics.",
+  alternates: { canonical: "/email-analytics" },
+  keywords: [
+    "AI email analytics",
+    "email management software",
+    "inbox zero method",
+    "Gmail automation",
+    "email productivity",
+  ],
+  openGraph: {
+    title: "Boost Productivity with AI Email Analytics | MailtoLive",
+    description:
+      "Unlock the power of AI to transform your email management. Discover insights, enhance productivity, and achieve inbox zero with MailtoLive's AI-driven email analytics.",
+    url: "https://mailto.live/email-analytics",
+    images: [
+      {
+        url: "/images/analytics.png",
+        width: 1200,
+        height: 630,
+        alt: "Email Analytics Dashboard",
+      },
+    ],
+  },
 };
 
-export default function AiAutomation() {
+export default function EmailAnalytics() {
   return (
     <BasicLayout>
       <Hero
-        title="Automate your email with AI"
-        subtitle="Inbox Zero's AI email assistant simplifies your email management. It smartly handles repetitive queries, automates responses, and efficiently organizes your inbox, streamlining your email workflow for maximum efficiency."
-        image="/images/ai-automation.png"
+        title="Understand Your Inbox with AI Email Analytics"
+        subtitle="Maximize your email management efficiency by gaining insights into your email patterns and improving productivity."
+        image="/images/analytics.png"
       />
       <Testimonials />
       <FeaturesAiAssistant />

@@ -59,7 +59,7 @@ export const env = createEnv({
     LICENSE_25_SEAT_VARIANT_ID: z.coerce.number().optional(),
   },
   client: {
-    NEXT_PUBLIC_LEMON_STORE_ID: z.string().nullish().default("inboxzero"),
+    NEXT_PUBLIC_LEMON_STORE_ID: z.string().nullish().default("mailtolive"),
 
     // lemon plans
     // basic
@@ -87,20 +87,18 @@ export const env = createEnv({
     NEXT_PUBLIC_LIFETIME_EXTRA_SEATS_VARIANT_ID: z.coerce.number().default(0),
 
     NEXT_PUBLIC_FREE_UNSUBSCRIBE_CREDITS: z.number().default(5),
-    NEXT_PUBLIC_CALL_LINK: z
-      .string()
-      .default("https://cal.com/team/inbox-zero/feedback"),
+    NEXT_PUBLIC_CALL_LINK: z.string().default("https://cal.com/mailto-live"),
     NEXT_PUBLIC_POSTHOG_KEY: z.string().optional(),
     NEXT_PUBLIC_POSTHOG_API_HOST: z.string().optional(),
     NEXT_PUBLIC_POSTHOG_HERO_AB: z.string().optional(),
     NEXT_PUBLIC_POSTHOG_ONBOARDING_SURVEY_ID: z.string().optional(),
-    NEXT_PUBLIC_BASE_URL: z.string().default("https://www.getinboxzero.com"),
+    NEXT_PUBLIC_BASE_URL: z.string().default("https://mailto.live"),
     NEXT_PUBLIC_CONTACTS_ENABLED: z.coerce.boolean().optional().default(false),
     NEXT_PUBLIC_SENTRY_DSN: z.string().optional(),
     NEXT_PUBLIC_SUPPORT_EMAIL: z
       .string()
       .optional()
-      .default("elie@getinboxzero.com"),
+      .default("info@mailto.live"),
     NEXT_PUBLIC_GTM_ID: z.string().optional(),
     NEXT_PUBLIC_CRISP_WEBSITE_ID: z.string().optional(),
     NEXT_PUBLIC_DISABLE_TINYBIRD: z.coerce.boolean().optional().default(false),

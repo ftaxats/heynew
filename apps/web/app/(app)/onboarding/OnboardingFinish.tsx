@@ -17,11 +17,11 @@ export const OnboardingFinish = () => {
       : appHomePath;
   }
 
-  return (
-    <Button asChild>
-      <Link onClick={() => completedAppOnboardingAction()} href={getHref()}>
-        Continue
-      </Link>
-    </Button>
-  );
+  const handleComplete = () => {
+    completedAppOnboardingAction();
+    // Redirect to /automation after completing onboarding
+    window.location.href = "/automation";
+  };
+
+  return <Button onClick={handleComplete}>Continue</Button>;
 };

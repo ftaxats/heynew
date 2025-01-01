@@ -17,22 +17,22 @@ const copy: {
   control: {
     title: "Spend 50% less time on email",
     subtitle:
-      "Automate your email with AI, bulk unsubscribe from newsletters, and block cold emails. Open-source.",
+      "Automate your email with AI, bulk unsubscribe from newsletters, and block cold emails.",
   },
   "clean-up-in-minutes": {
     title: "Clean Up Your Inbox In Minutes",
     subtitle:
-      "Bulk unsubscribe from newsletters, automate your emails with AI, block cold emails, and view your analytics. Open-source.",
+      "Bulk unsubscribe from newsletters, automate your emails with AI, block cold emails, and view your analytics. ",
   },
   "meet-your-ai-assistant": {
-    title: "Meet Inbox Zero, Your AI Email Assistant",
+    title: "Meet Mailto Live, Your AI Email Assistant",
     subtitle:
       "Spend 50% less time on email. Inbox Zero will automate replies, categorize emails, and get your inbox to zero, fast.",
   },
   "meet-your-ai-assistant-2": {
     title: "Meet Your AI Email Assistant That Actually Works",
     subtitle:
-      "Cut your email time in half. Inbox Zero intelligently automates responses, organizes your inbox, and helps you reach inbox zero in record time.",
+      "Cut your email time in half. Mailto Live intelligently automates responses, organizes your inbox, and helps you reach inbox zero in record time.",
   },
 };
 
